@@ -320,7 +320,6 @@ ol, ul {
     background-color: var(--main-green);
 }
 .fixed-bottom {
-    background-color: #b9b9b9; 
     position: relative; 
     left: 0px; 
     bottom: -25px; 
