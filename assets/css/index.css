@@ -228,12 +228,15 @@ a.support{
 .fa-eye-slash:hover::before,.fa-eye:hover::before {
     color: var(--main-green)!important;
 }
-@media (max-width: 992px) {
-    .background-section {
-        display: none;
-   }
+@media only screen and (max-width: 850px){
    html {
     font-size: 0.82rem;
+}
+body{
+    padding: 0 1.3rem;
+}
+.background-section {
+    display: none;
 }
 .logo {
     width: 150px;
@@ -315,6 +318,7 @@ ol, ul {
     background-color: var(--main-green);
 }
 .fixed-bottom {
+    background-color: #b9b9b9;
     position: absolute;
     left: 0;
     bottom: 0px;
