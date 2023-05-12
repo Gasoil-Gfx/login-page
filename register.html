@@ -36,7 +36,7 @@
                      <label class="form-check-label" for="physique"><i class="fa-solid fa-person"></i> Personne physique</label>
                   </div>
                </div>
-               <form action="" method="POST" id="moraleForm" class="mb-5 mt-4">
+               <form action="" method="POST" id="moraleForm" class="mb-2 mt-4">
                   <div class="form-group">
                      <label for="activiteSouhaitee">Quelle est votre activité souhaitée?</label>
                      <div class="select-container form-control" id="personneMorale">
@@ -121,15 +121,18 @@
                         <i class="toggle-password position-absolute top-50 end-0 translate-middle-y fa fa-eye-slash" onclick="togglePasswordVisibility('moralePassword2', this)"></i>
                      </div>
                   </div>
-                  <div class="form-group mb-4 d-flex justify-content-between">
-                     <a href="index.html">Connectez-vous</a>
-                     <a href="forgotten-password.html" style="text-align: right;">Mot de Passe Oublié?</a>
-                  </div>
-                  <div class="d-flex justify-content-center">
+                  <div class="form-group">
+                     <input type="checkbox" id="terms-and-conditions-morale" class="checkbox-input">
+                     <label class="conditions" for="terms-and-conditions-morale">
+                         J'accepte les <a href="#" target="_blank">termes et conditions</a>
+                     </label>
+                 </div>
+                 
+                  <div class="d-flex mt-4 justify-content-center">
                      <input name="register" id="register" class="login" type="button" value="CRÉER">
                   </div>
                </form>
-               <form action="" method="post" id="physiqueForm" style="display: none;" class="mb-5 mt-4">
+               <form action="" method="post" id="physiqueForm" style="display: none;" class="mb-2 mt-4">
                   <div class="form-group">
                      <label for="activiteSouhaitee">Quelle est votre activité souhaitée?</label>
                      <div class="select-container form-control" id="personnePhysique">
@@ -202,14 +205,20 @@
                  <i class="toggle-password position-absolute top-50 end-0 translate-middle-y fa fa-eye-slash" onclick="togglePasswordVisibility('physiquePassword2', this)"></i>
               </div>
            </div>
-                <div class="form-group mb-4 d-flex justify-content-between">
-                   <a href="index.html">Connectez-vous</a>
-                   <a href="forgotten-password.html" style="text-align: right;">Mot de Passe Oublié?</a>
-                </div>
-                <div class="d-flex justify-content-center">
+           <div class="form-group">
+            <input type="checkbox" id="terms-and-conditions-physique" class="checkbox-input">
+            <label class="conditions" for="terms-and-conditions-physique">
+                J'accepte les <a href="#" target="_blank">termes et conditions</a>
+            </label>
+            </div>
+                <div class="d-flex mt-4 justify-content-center">
                    <input name="register" id="register" class="login" type="button" value="CRÉER">
                 </div>
                </form>
+               <div class="form-group my-0 d-flex justify-content-between">
+                  <a href="index.html">Connectez-vous</a>
+                  <a href="forgotten-password.html" style="text-align: right;">Mot de Passe Oublié?</a>
+               </div>
                <p></p>
             </div>
          </div>
