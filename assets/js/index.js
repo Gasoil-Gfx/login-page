@@ -15,27 +15,30 @@ const physiqueForm = document.getElementById("physiqueForm");
 const moraleRadio = document.getElementById("morale");
 const physiqueRadio = document.getElementById("physique");
 
-moraleRadio.addEventListener("change", () => {
-    if (moraleRadio.checked) {
-        physiqueForm.classList.add("hidden");
-        setTimeout(() => {
-            physiqueForm.style.display = "none";
-            moraleForm.style.display = "block";
-            moraleForm.classList.remove("hidden");
-        }, 400);
-    }
-});
+if (moraleForm && physiqueForm && moraleRadio && physiqueRadio) {
+    moraleRadio.addEventListener("change", () => {
+        if (moraleRadio.checked) {
+            physiqueForm.classList.add("hidden");
+            setTimeout(() => {
+                physiqueForm.style.display = "none";
+                moraleForm.style.display = "block";
+                moraleForm.classList.remove("hidden");
+            }, 400);
+        }
+    });
 
-physiqueRadio.addEventListener("change", () => {
-    if (physiqueRadio.checked) {
-        moraleForm.classList.add("hidden");
-        setTimeout(() => {
-            moraleForm.style.display = "none";
-            physiqueForm.style.display = "block";
-            physiqueForm.classList.remove("hidden");
-        }, 400);
-    }
-});
+    physiqueRadio.addEventListener("change", () => {
+        if (physiqueRadio.checked) {
+            moraleForm.classList.add("hidden");
+            setTimeout(() => {
+                moraleForm.style.display = "none";
+                physiqueForm.style.display = "block";
+                physiqueForm.classList.remove("hidden");
+            }, 400);
+        }
+    });
+}
+
 
 const selectBtns = document.querySelectorAll(".select-btn"),
       itemLists = document.querySelectorAll(".list-items");
@@ -72,7 +75,6 @@ itemLists.forEach(list => {
     });
 });
 
-// Add event listener for click events on the document
 document.addEventListener('click', (event) => {
     selectBtns.forEach(selectBtn => {
         // Check if the click event's target is inside the dropdown

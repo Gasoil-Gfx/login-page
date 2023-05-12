@@ -315,9 +315,9 @@ ol, ul {
     background-color: var(--main-green);
 }
 .fixed-bottom {
-    position: fixed;
+    position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: 0px;
     width: 100%;
     z-index: 0;
 }
