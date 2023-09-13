@@ -1,4 +1,8 @@
-@import 'https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600,700,900';
+/* crafted by Gasoil - www.Alexsys.Solutions */
+
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600,700,900');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap');
 :root {
     --main-green: #004e2b;
     --secondary-green: #00331b;
@@ -40,9 +44,8 @@ body {
         linear-gradient(to top, 
                         #ffffff 0%, 
                         #e4e4e4 50%, 
-                        rgba(0, 78, 43, 0.8) 50%, 
-                        rgba(0, 78, 43, 0.8) 100%), 
-        url(../img/cimar-background.png) repeat center top;
+                        rgba(0, 78, 43) 50%, 
+                        rgba(0, 78, 43) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -124,10 +127,41 @@ form {
     height: 100%;
 }
 
-.header-image {
-    align-self: flex-start;
-    margin: 0;
-    padding: 0; 
+.background-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.background-images > div {
+    height: 33.33%;
+    background-size: cover;
+    background-position: center;
+}
+
+.bg1 {
+    background-image: url('../img/bg1.png');
+}
+
+.bg2 {
+    background-image: url('../img/bg2.png');
+}
+
+.bg3 {
+    background-image: url('../img/bg3.png');
+}
+
+.background-images > div::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: var(--main-green);
+    opacity: 0.35; /* Adjust transparency as needed */
 }
 
 .content {
@@ -140,7 +174,9 @@ form {
     justify-content: center;
     align-items: center;
     width: 100%;
+    z-index: 1;
 }
+
 .content h2 {
     font-size: 3rem;
 }
@@ -153,6 +189,8 @@ form {
     text-align: center;
     font-size: .8rem;
 }
+
+
 
 
 .form-control {
@@ -298,7 +336,7 @@ ol, ul {
    color: var(--main-green);
 }
 .checkbox-input{
-    display: none;
+    visibility: hidden;
 }
 .checkbox-input + label {
     padding-left: 30px;

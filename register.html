@@ -26,7 +26,8 @@
             <div class="register-wrapper my-auto">
                <h2 class="login-title text-center mt-5">Bienvenue sur votre espace client</h2>
                <h4 class="connexion text-center">Créer votre compte</h4>
-               <div class="text-center mt-5 mb-3">
+               <!-- <div class="text-center mt-5 mb-3"> -->
+               <div class="text-center my-5">
                   <div class="form-check form-check-inline">
                      <input class="form-check-input" type="radio" name="personType" id="morale" value="morale" checked>
                      <label class="form-check-label" for="morale"><i class="fa-solid fa-building"></i> Personne morale</label>
@@ -36,10 +37,10 @@
                      <label class="form-check-label" for="physique"><i class="fa-solid fa-person"></i> Personne physique</label>
                   </div>
                </div>
-               <form action="" method="POST" id="moraleForm" class="mb-2 mt-4">
+               <form action="" method="POST" id="moraleForm" class="mb-2 mt-4" onsubmit="return checkActivityMorale();" novalidate>
                   <div class="form-group">
-                     <label for="activiteSouhaitee">Quelle est votre activité souhaitée?</label>
-                     <div class="select-container form-control" id="personneMorale">
+                     <label for="activiteMoraleSouhaitee">Quelle est votre activité souhaitée?</label>
+                     <div class="select-container form-control" id="activiteMoraleSouhaitee">
                          <div class="select-btn">
                              <span class="btn-text">Choisir...</span>
                          </div>            
@@ -122,34 +123,39 @@
                      </div>
                   </div>
                   <div class="form-group">
-                     <input type="checkbox" id="terms-and-conditions-morale" class="checkbox-input">
+                     <label for="">
+                        <p class="conditions">Conformément à la loi n° 09-08, vous disposez d’un droit d’accès, de rectification et d’opposition au traitement de vos données personnelles. Ce traitement a été déclaré à la CNDP sous le n° D-W-426/2023.</p>
+                     </label>
+                     <input type="checkbox" id="terms-and-conditions-morale" class="checkbox-input" required>
                      <label class="conditions" for="terms-and-conditions-morale">
-                         J'accepte les <a href="#" target="_blank">termes et conditions</a>
+                        J’ai lu et j’accepte les <a href="/policy" target="_blank">conditions d’utilisation</a> et notamment les mentions relatives à la protection des données personnelles.
                      </label>
                  </div>
                  
                   <div class="d-flex mt-4 justify-content-center">
-                     <input name="register" id="register" class="login" type="button" value="CRÉER">
+                     <input name="register" id="register" class="login" type="submit" value="CRÉER">
                   </div>
+                  <div id="formNotCompletedMoraleError" class="alert alert-danger mt-2" style="display:none;">Veuillez vous assurer de remplir tous les champs et d'accepter la politique d'utilisation.</div>
+
                </form>
-               <form action="" method="post" id="physiqueForm" style="display: none;" class="mb-2 mt-4">
+               <form action="" method="post" id="physiqueForm" style="display: none;" class="mb-2 mt-4"  onsubmit="return checkActivityPhysique();" novalidate>
                   <div class="form-group">
-                     <label for="activiteSouhaitee">Quelle est votre activité souhaitée?</label>
-                     <div class="select-container form-control" id="personnePhysique">
+                     <label for="activitePhysiqueSouhaitee">Quelle est votre activité souhaitée?</label>
+                     <div class="select-container form-control" id="activitePhysiqueSouhaitee">
                          <div class="select-btn">
                              <span class="btn-text">Choisir...</span>
                          </div>            
                          <ul class="list-items">
                              <li class="item">
-                                 <input type="checkbox" id="physique-ciment" class="checkbox-input" />
+                                 <input type="checkbox" id="physique-ciment" class="checkbox-input"/>
                                  <label for="physique-ciment" class="item-text">Ciment</label>
                              </li>
                              <li class="item">
-                                 <input type="checkbox" id="physique-beton" class="checkbox-input" />
+                                 <input type="checkbox" id="physique-beton" class="checkbox-input"/>
                                  <label for="physique-beton" class="item-text">Béton</label>
                              </li>
                              <li class="item">
-                                 <input type="checkbox" id="physique-granulats" class="checkbox-input" />
+                                 <input type="checkbox" id="physique-granulats" class="checkbox-input"/>
                                  <label for="physique-granulats" class="item-text">Granulats</label>
                              </li>
                          </ul>
@@ -206,14 +212,18 @@
               </div>
            </div>
            <div class="form-group">
-            <input type="checkbox" id="terms-and-conditions-physique" class="checkbox-input">
-            <label class="conditions" for="terms-and-conditions-physique">
-                J'accepte les <a href="#" target="_blank">termes et conditions</a>
+            <label for="">
+               <p class="conditions">Conformément à la loi n° 09-08, vous disposez d’un droit d’accès, de rectification et d’opposition au traitement de vos données personnelles. Ce traitement a été déclaré à la CNDP sous le n° D-W-426/2023.</p>
             </label>
-            </div>
+            <input type="checkbox" id="terms-and-conditions-physique" class="checkbox-input" required>
+            <label class="conditions" for="terms-and-conditions-physique">
+               J’ai lu et j’accepte les <a href="/policy" target="_blank">conditions d’utilisation</a> et notamment les mentions relatives à la protection des données personnelles.
+            </label>
+        </div>
                 <div class="d-flex mt-4 justify-content-center">
-                   <input name="register" id="register" class="login" type="button" value="CRÉER">
+                   <input name="register" id="register" class="login" type="submit" value="CRÉER">
                 </div>
+                <div id="formNotCompletedPhysiqueError" class="alert alert-danger mt-2" style="display:none;">Veuillez vous assurer de remplir tous les champs et d'accepter la politique d'utilisation.</div>
                </form>
                <div class="form-group my-0 d-flex justify-content-between">
                   <a href="index.html">Connectez-vous</a>
@@ -230,4 +240,9 @@
         Centre de contact clients <span class="support-number">0800092022</span> 6j/7 de 8h00 à 18h00</p>
     </a>
    <script src="assets/js/index.js"></script>
+   <script src="assets/js/register.js"></script>
+      
+  
+  
 </html>
+
